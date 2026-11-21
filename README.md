@@ -5,6 +5,8 @@ each at its default settings, and scored against the source image. This is the c
 behind [vectorizely.com/vectorizer-benchmark](https://vectorizely.com/vectorizer-benchmark/),
 which has the write-up, zoomed crops and the list of free tools built on each engine.
 
+Also listed on [SourceForge](https://sourceforge.net/projects/vectorizer-benchmark/).
+
 We built one of the engines tested ([Vectorizely](https://vectorizely.com/)), so the method,
 the scoring code and every number are here to check.
 
