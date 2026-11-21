@@ -1,0 +1,22 @@
+[
+  { "file": "site_logo.png", "label": "Flat logo", "category": "logo", "source": "Vectorizely sample, drawn for this site" },
+  { "file": "site_icon.png", "label": "Flat icon", "category": "logo", "source": "Vectorizely sample, drawn for this site" },
+  { "file": "rocket.png", "label": "Rocket badge", "category": "logo", "source": "Drawn for this site" },
+  { "file": "emblem_laurel.png", "label": "Laurel wreath", "category": "logo", "source": "Pixabay (Pixabay Content License)" },
+  { "file": "logo_calligraphy.png", "label": "Calligraphy emblem", "category": "logo", "source": "Pixabay (Pixabay Content License)" },
+  { "file": "flag_brazil.png", "label": "Flag of Brazil", "category": "logo", "source": "Public-domain design, rendered from Wikimedia Commons" },
+  { "file": "rocket_jpg.jpg", "label": "Rocket badge saved as JPG (quality 70)", "category": "lowq", "source": "Drawn for this site" },
+  { "file": "site_logo_jpg.jpg", "label": "Flat logo saved as JPG (quality 70)", "category": "lowq", "source": "Vectorizely sample, drawn for this site" },
+  { "file": "rocket_small.png", "label": "Rocket badge at 160 px", "category": "lowq", "source": "Drawn for this site" },
+  { "file": "lineart_girl.png", "label": "Ink drawing", "category": "lineart", "source": "Pixabay (Pixabay Content License)" },
+  { "file": "lineart_kitten.png", "label": "Coloring page", "category": "lineart", "source": "Pixabay (Pixabay Content License)" },
+  { "file": "signature.png", "label": "Signature", "category": "lineart", "source": "Made for this site" },
+  { "file": "lineart_girl_photo.jpg", "label": "Ink drawing photographed on paper", "category": "lineart", "source": "The ink drawing on synthetic paper with uneven light, blur, noise and JPEG" },
+  { "file": "doodle_bee.png", "label": "Doodle", "category": "illus", "source": "Pixabay (Pixabay Content License)" },
+  { "file": "illus_flowerface.png", "label": "Flat illustration", "category": "illus", "source": "Pixabay (Pixabay Content License)" },
+  { "file": "illus_oldman.png", "label": "Cartoon character", "category": "illus", "source": "Pixabay (Pixabay Content License)" },
+  { "file": "illus_cat_pattern.jpg", "label": "Cartoon on a pattern (JPG)", "category": "illus", "source": "Pixabay (Pixabay Content License)" },
+  { "file": "gradient_shield.png", "label": "Shaded shield", "category": "tone", "source": "Pixabay (Pixabay Content License)" },
+  { "file": "site_gradient.png", "label": "Color gradient", "category": "tone", "source": "Vectorizely sample, drawn for this site" },
+  { "file": "photo_dog.jpg", "label": "Photo", "category": "tone", "source": "Pixabay (Pixabay Content License)" }
+]

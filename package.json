@@ -1,0 +1,19 @@
+{
+  "name": "vectorizer-benchmark",
+  "version": "1.0.0",
+  "description": "Benchmark of the open-source tracing engines behind free image-to-SVG converters",
+  "homepage": "https://vectorizely.com/vectorizer-benchmark/",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node run.mjs"
+  },
+  "dependencies": {
+    "@visioncortex/vtracer": "1.0.0-alpha.4",
+    "playwright": "1.55.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
