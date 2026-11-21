@@ -7,7 +7,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "node run.mjs"
+    "start": "node run.mjs",
+    "check": "node run.mjs && cmp results/results.csv reference/open-set-2026-11-21.csv && echo \"Same as the reference run.\""
   },
   "dependencies": {
     "@visioncortex/vtracer": "1.0.0-alpha.4",

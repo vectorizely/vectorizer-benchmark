@@ -1,6 +1,6 @@
 # Free vectorizer benchmark
 
-The same test images traced by the open-source engines behind free image-to-SVG converters,
+The same 20 test images traced by the open-source engines behind free image-to-SVG converters,
 each at its default settings, and scored against the source image. This is the code and data
 behind [vectorizely.com/vectorizer-benchmark](https://vectorizely.com/vectorizer-benchmark/),
 which has the write-up, zoomed crops and the list of free tools built on each engine.
@@ -8,29 +8,39 @@ which has the write-up, zoomed crops and the list of free tools built on each en
 We built one of the engines tested ([Vectorizely](https://vectorizely.com/)), so the method,
 the scoring code and every number are here to check.
 
-## Results (2026-10-05, 20 images)
+## Results on the images in this repository (2026-11-21, 20 images)
 
-Color engines, all 20 images:
+All 20 images are here, so this table can be rerun by anyone. Color engines, all 20 images:
 
 | Engine | Settings | See-through pixels | Color error (ΔE) | Anchor points (median) | SVG size (median) |
 |---|---|---:|---:|---:|---:|
-| Vectorizely | Color mode, colors on Auto | 0.018% | 2.09 | 396 | 9.9 KB |
-| VTracer 1.0.0-alpha.4 | library defaults | 0.000% | 5.82 | 1,440.5 | 37.1 KB |
-| ImageTracer.js 1.2.6 | `default` preset (16 colors) | 9.851% | 3.31 | 5,972 | 132.5 KB |
-| AutoTrace 0.40.0 | `-color-count 16` | 2.055% | 3.35 | 12,521.5 | 278.2 KB |
-| AutoTrace 0.40.0 | command-line defaults | 19.967% | 10.45 | 81,780.5 | 1,861.8 KB |
+| Vectorizely | Color mode, colors on Auto | 0.002% | 2.98 | 278.5 | 6.8 KB |
+| VTracer 1.0.0-alpha.4 | library defaults | 0.000% | 6.75 | 1,041.5 | 28.6 KB |
+| ImageTracer.js 1.2.6 | `default` preset (16 colors) | 8.208% | 4.10 | 4,161.5 | 107.7 KB |
+| AutoTrace 0.40.0 | `-color-count 16` | 4.091% | 5.05 | 12,453.5 | 278.2 KB |
+| AutoTrace 0.40.0 | command-line defaults | 20.707% | 12.31 | 68,555.5 | 1,604.0 KB |
 
-Black-and-white engines, the 4 line art images:
+Black-and-white engines, the 5 line art images:
 
 | Engine | Settings | Ink overlap | Anchor points (median) | SVG size (median) |
 |---|---|---:|---:|---:|
-| Vectorizely | B&W mode | 96.35% | 573 | 10.9 KB |
-| Potrace 1.16 | defaults, image thresholded at 50% gray | 96.25% | 687.5 | 14.2 KB |
-| VTracer 1.0.0-alpha.4 | `bw` preset | 91.27% | 1,002.5 | 26.1 KB |
+| Vectorizely | B&W mode | 93.10% | 5,251 | 82.3 KB |
+| Potrace 1.16 | defaults, image thresholded at 50% gray | 93.08% | 6,107 | 107.0 KB |
+| VTracer 1.0.0-alpha.4 | `bw` preset | 87.02% | 7,858 | 159.7 KB |
 
-Every row behind these averages is in
-[`published/results-2026-10-05.csv`](published/results-2026-10-05.csv): 112 rows, one per image
-and engine.
+Vectorizely and Potrace are level on ink overlap. Potrace is ahead on the drawing photographed
+on paper (95.5% against 91.4%) and behind on the four clean ones. Every row is in
+[`reference/open-set-2026-11-21.csv`](reference/open-set-2026-11-21.csv).
+
+## Results on the page (2026-10-05)
+
+[The page](https://vectorizely.com/vectorizer-benchmark/) was measured earlier on a different set
+of 20: nine of the images here and eleven from Pixabay, whose license does not let us hand the
+files on as they are. Those numbers are in
+[`published/results-2026-10-05.csv`](published/results-2026-10-05.csv) (112 rows). The set here
+swaps the eleven for public-domain and CC0 files from Wikimedia Commons, picked before the first
+run, so the two tables differ. The nine shared images score the same in both, digit for digit.
+[CREDITS.md](CREDITS.md) lists every image's source and license.
 
 ## Run it
 
@@ -42,13 +52,9 @@ node run.mjs
 ```
 
 `node run.mjs rocket` runs only the images whose name matches. The run prints a summary and
-writes `results/results.csv` and every traced SVG to `results/svg/`.
-
-Nine of the 20 images are in this repository. A run on those nine gives the same 48 rows as the
-published CSV, digit for digit (checked with Chromium 140, AutoTrace 0.40.0 and Potrace 1.16 on
-macOS). The other eleven came from Pixabay, whose license does not let us hand the files on as
-they are, so they are listed in [CREDITS.md](CREDITS.md) and left out. Their rows are in the
-published CSV.
+writes `results/results.csv` and every traced SVG to `results/svg/`. `npm run check` runs
+everything and compares the CSV with the reference run. It matched on macOS with Chromium 140,
+AutoTrace 0.40.0, Potrace 1.16 and ImageMagick 7; other versions can move the last digit.
 
 ## Method
 
